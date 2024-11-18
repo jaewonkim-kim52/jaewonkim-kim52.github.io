@@ -20,6 +20,7 @@
     <nav id="s2">
         <ul>
             <li><a href>오늘의 메뉴 추천</a></li>
+            <button onclick="showAlert()">Click Me</button>
             <li><a href>레시피 찾기</a></li>
         </ul>
     </nav>
@@ -28,14 +29,14 @@
         <hr>
         <h3>-오늘의 메뉴 추천-</h3>
         <h4>1. 김치찌개</h4>
-        <img src="C:\Users\kmjw0\OneDrive\바탕 화면\2024_2\image\image6.jpg" height="120">
+        <img src="image/image6.jpg" height="120">
         <h5>재료</h5>: 김치, 돼지고기, 두부, 양파, 대파, 고춧가루, 된장, 다진 마늘, 소금, 설탕, 물
         <br><h5>조리법</h5>1. 냄비에 돼지고기와 김치를 넣고 볶습니다.<br>
                             2. 물을 넣고 끓인 후 고춧가루, 된장, 다진 마늘을 넣습니다.<br>
                             3. 두부, 양파, 대파를 넣고 간을 맞춰 끓입니다.<br>
         
         <h4>2. 까르보나라 스파게티</h4>
-        <img src="C:\Users\kmjw0\OneDrive\바탕 화면\2024_2\image\image7.jpg" height="120">
+        <img src="image/image7.jpg" height="120">
         <h5>재료</h5>: 스파게티 면, 베이커, 달걀 노른자, 파마산 치즈, 생크림, 후추, 소금
         <br><h5>조리법</h5>1. 스파게티 면을 삶습니다.<br>
                          2. 베이컨을 볶아 기름을 냅니다.<br>
@@ -46,9 +47,14 @@
             <hr>
             <h3>-레시피 찾기-</h3>
             <form name="fo" method="get">
-             음식 이름 : <input type="password" size="15" value="">            
-            <input type="reset" value="reset">
-            <br>
+                음식 이름 : <input type="password" size="15" value="">            
+                <input type="reset" value="reset">
+                <br>
         </section>
+        <script>
+            function showAlert(){
+            alert("김치찌개 아니면 까르보나라 스파게티 어떤가요?");
+            }   
+        </script>
 </body>
 </html>
