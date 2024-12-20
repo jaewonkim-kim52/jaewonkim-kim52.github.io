@@ -1,60 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewpoint" content="width=device-width, initial-scale">
-    <title>Document</title>
-    <style>
-        #float{
-            position:absolute;
-            left:1300px;
-            top:10px;
-        }
-        #s2{background-color: rgb(187, 194, 227);}
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Sharing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    #header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f4f4f4;
+      padding: 10px 20px;
+      border-bottom: 2px solid #ddd;
+    }
+
+    #float {
+      font-size: 14px;
+      color: #555;
+    }
+
+    nav {
+      background-color: rgb(187, 194, 227);
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    section {
+      margin: 20px;
+    }
+
+    img {
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.2);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .recipe-card {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      /* 입체 효과 제거 */
+    }
+  </style>
 </head>
+
 <body>
+  <div id="header">
     <h1>레시피 공유</h1>
     <div id="float">202400855 김재원</div>
-    <hr>
-    <nav id="s2">
-        <ul>
-            <li><a href>오늘의 메뉴 추천</a></li>
-            <button onclick="showAlert()">Click Me</button>
-            <li><a href>레시피 찾기</a></li>
-        </ul>
-    </nav>
+  </div>
 
-    <section>
-        <hr>
-        <h3>-오늘의 메뉴 추천-</h3>
-        <h4>1. 김치찌개</h4>
-        <img src="image/image6.jpg" height="120">
-        <h5>재료</h5>: 김치, 돼지고기, 두부, 양파, 대파, 고춧가루, 된장, 다진 마늘, 소금, 설탕, 물
-        <br><h5>조리법</h5>1. 냄비에 돼지고기와 김치를 넣고 볶습니다.<br>
-                            2. 물을 넣고 끓인 후 고춧가루, 된장, 다진 마늘을 넣습니다.<br>
-                            3. 두부, 양파, 대파를 넣고 간을 맞춰 끓입니다.<br>
-        
-        <h4>2. 까르보나라 스파게티</h4>
-        <img src="image/image7.jpg" height="120">
-        <h5>재료</h5>: 스파게티 면, 베이커, 달걀 노른자, 파마산 치즈, 생크림, 후추, 소금
-        <br><h5>조리법</h5>1. 스파게티 면을 삶습니다.<br>
-                         2. 베이컨을 볶아 기름을 냅니다.<br>
-                        3. 달걀 노른자와 생크림, 파마산 치즈를 섞고, 삶은 면과 베이컨을 넣어 함께 버무립니다.<br>
-        </section>
+  <hr>
 
-        <section>
-            <hr>
-            <h3>-레시피 찾기-</h3>
-            <form name="fo" method="get">
-                음식 이름 : <input type="password" size="15" value="">            
-                <input type="reset" value="reset">
-                <br>
-        </section>
-        <script>
-            function showAlert(){
-            alert("김치찌개 아니면 까르보나라 스파게티 어떤가요?");
-            }   
-        </script>
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showSection('menu-section')">오늘의 메뉴 추천</a></li>
+      <li><a href="#" onclick="showSection('search-section')">레시피 찾기</a></li>
+    </ul>
+  </nav>
+
+  <section id="menu-section">
+    <h3>- 오늘의 메뉴 추천 -</h3>
+
+    <div class="recipe-card">
+      <h4>1. 김치찌개</h4>
+      <img src="image/image6.jpg" height="120" alt="김치찌개">
+      <h5>재료:</h5>
+      <p>김치, 돼지고기, 두부, 양파, 대파, 고춧가루, 된장, 다진 마늘, 소금, 설탕, 물</p>
+      <h5>조리법:</h5>
+      <ol>
+        <li>냄비에 돼지고기와 김치를 넣고 볶습니다.</li>
+        <li>물을 넣고 끓인 후 고춧가루, 된장, 다진 마늘을 넣습니다.</li>
+        <li>두부, 양파, 대파를 넣고 간을 맞춰 끓입니다.</li>
+      </ol>
+    </div>
+
+    <div class="recipe-card">
+      <h4>2. 까르보나라 스파게티</h4>
+      <img src="image/image7.jpg" height="120" alt="까르보나라 스파게티">
+      <h5>재료:</h5>
+      <p>스파게티 면, 베이컨, 달걀 노른자, 파마산 치즈, 생크림, 후추, 소금</p>
+      <h5>조리법:</h5>
+      <ol>
+        <li>스파게티 면을 삶습니다.</li>
+        <li>베이컨을 볶아 기름을 냅니다.</li>
+        <li>달걀 노른자와 생크림, 파마산 치즈를 섞고, 삶은 면과 베이컨을 넣어 함께 버무립니다.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="search-section" class="hidden">
+    <h3>- 레시피 찾기 -</h3>
+    <form onsubmit="searchRecipe(event)">
+      음식 이름: <input type="text" id="recipe-input" placeholder="음식 이름을 입력하세요">
+      <input type="reset" value="초기화">
+      <button type="submit">검색</button>
+    </form>
+    <div id="search-result" class="recipe-card hidden"></div>
+  </section>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => section.classList.add('hidden'));
+      document.getElementById(sectionId).classList.remove('hidden');
+    }
+
+    function searchRecipe(event) {
+      event.preventDefault();
+      const input = document.getElementById('recipe-input').value.trim();
+      const result = document.getElementById('search-result');
+
+      const recipes = {
+        "된장찌개": {
+          ingredients: "된장, 감자, 애호박, 두부, 양파, 대파, 물",
+          method: `
+            1. 물에 된장을 풀고 끓입니다.<br>
+            2. 감자, 애호박, 두부, 양파를 넣어 끓입니다.<br>
+            3. 대파를 넣고 한소끔 더 끓입니다.`
+        },
+        "제육볶음": {
+          ingredients: "돼지고기, 고추장, 간장, 설탕, 고춧가루, 다진 마늘, 양파, 당근, 대파",
+          method: `
+            1. 돼지고기에 고추장, 간장, 설탕, 고춧가루, 다진 마늘로 양념합니다.<br>
+            2. 팬에 양념한 고기를 볶다가 양파, 당근, 대파를 추가해 볶습니다.`
+        },
+        "불고기": {
+          ingredients: "소고기, 간장, 설탕, 참기름, 다진 마늘, 양파, 당근, 버섯",
+          method: `
+            1. 소고기를 간장, 설탕, 참기름, 다진 마늘로 양념합니다.<br>
+            2. 팬에 고기를 볶다가 양파, 당근, 버섯을 추가해 볶습니다.`
+        },
+        "김밥": {
+          ingredients: "김, 밥, 당근, 시금치, 단무지, 달걀, 햄",
+          method: `
+            1. 밥에 참기름과 소금을 넣어 섞습니다.<br>
+            2. 김 위에 밥을 깔고 준비한 재료를 올려 말아줍니다.<br>
+            3. 먹기 좋게 썰어냅니다.`
+        },
+        "비빔밥": {
+          ingredients: "밥, 나물, 고추장, 참기름, 달걀, 김가루",
+          method: `
+            1. 밥 위에 나물과 고추장을 얹습니다.<br>
+            2. 참기름을 뿌리고 달걀 프라이를 올립니다.<br>
+            3. 잘 섞어서 먹습니다.`
+        }
+      };
+
+      const recipe = recipes[input];
+      if (recipe) {
+        result.innerHTML = `
+          <h4>${input}</h4>
+          <h5>재료:</h5>
+          <p>${recipe.ingredients}</p>
+          <h5>조리법:</h5>
+          <p>${recipe.method}</p>`;
+        result.classList.remove('hidden');
+      } else {
+        result.innerHTML = `<p>해당 레시피를 찾을 수 없습니다.</p>`;
+        result.classList.remove('hidden');
+      }
+    }
+  </script>
 </body>
+
 </html>
+
